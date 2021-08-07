@@ -1,6 +1,6 @@
 # Desafio Driva 
 
-Para saber o funcionamento de cada rola entre na rota /api-docs para ter acesso a documentação dessa aplicação
+Para saber o funcionamento da aplicação entre na rota /api-docs para ter acesso a documentação.
 
 Para executar basta rodar o comando 
 
