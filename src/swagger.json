@@ -1,0 +1,103 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Desafio Driva",
+        "description": "This is an API Rest",
+        "version": "1.0.0",
+        "contact": {
+            "email": "j_souza_camargo@live.com"
+        }
+    },
+    "paths": {
+        "/soma": {
+            "post": {
+                "summary": "Soma os dois números",
+                "description": "Soma os dois números enviados e restorna o resultado",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "num1": {
+                                        "type": "number"
+                                    },
+                                    "num2": {
+                                        "type": "number"
+                                    }
+                                },
+                                "example": {
+                                    "num1": 3,
+                                    "num2": 7
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Soma realizada com sucesso"
+                    },
+                    "500": {
+                        "description": "Erro no json enviado"
+                    },
+                    "406": {
+                        "description": "Devem ser enviados apenas números"
+                    }
+                }
+            }
+        },
+        "/hello": {
+            "get": {
+                "summary": "Página de hello world",
+                "description": "Mostra hello world na tela",
+                "responses": {
+                    "200": {
+                        "description": "Operação realizada com sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "hello": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/starwars/films": {
+            "get": {
+                "summary": "Lista os filmes do starwars",
+                "description": "Lista todos os filmes do starwars",
+                "responses": {
+                    "200": {
+                        "description": "Operação realizada com sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "starwarsMovies": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Falha ao se conectar com a api"
+                    }
+                }
+            }
+        }
+    }
+}
